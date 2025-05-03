@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অরুমিনা পুস্পপথ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="site-title">অরুমিনা পুস্পপথ</h1>
+            <p class="subtitle">A beautiful floral pinboard</p>
+        </header>
+
+        <main>
+            <section class="posts-section">
+                <div class="section-header">
+                    <h2>Posts</h2>
+                    <div class="controls">
+                        <div class="search-container">
+                            <input type="text" id="post-search" placeholder="Search posts...">
+                            <button id="post-search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                        <button id="add-post-btn" class="action-btn"><i class="fas fa-plus"></i> Add Post</button>
+                        <button id="clear-posts-btn" class="action-btn warning"><i class="fas fa-trash"></i> Clear All</button>
+                    </div>
+                </div>
+                <div id="pinboard" class="pinboard">
+                    <!-- Posts will be dynamically added here -->
+                </div>
+            </section>
+
+            <section class="comments-section">
+                <div class="section-header">
+                    <h2>Comments</h2>
+                    <div class="controls">
+                        <div class="search-container">
+                            <input type="text" id="comment-search" placeholder="Search comments...">
+                            <button id="comment-search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                        <button id="clear-comments-btn" class="action-btn warning"><i class="fas fa-trash"></i> Clear All</button>
+                    </div>
+                </div>
+                <div class="comments-container">
+                    <div class="selected-post-info">
+                        <p>No post selected</p>
+                    </div>
+                    <div class="comment-input-container">
+                        <textarea id="comment-input" placeholder="Add comments (each line break creates a new comment)..."></textarea>
+                        <div class="comment-actions">
+                            <button id="add-comment-btn" class="action-btn"><i class="fas fa-plus"></i> Add Comments</button>
+                            <button id="clear-input-btn" class="action-btn secondary"><i class="fas fa-eraser"></i> Clear Input</button>
+                        </div>
+                    </div>
+                    <div id="comments-list">
+                        <!-- Comments will be dynamically added here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2023 অরুমিনা পুস্পপথ</p>
+        </footer>
+    </div>
+
+    <!-- Modal for adding/editing posts -->
+    <div id="post-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-title">Add New Post</h3>
+            <form id="post-form">
+                <div class="form-group">
+                    <label for="post-title">Title:</label>
+                    <input type="text" id="post-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="post-content">Content:</label>
+                    <textarea id="post-content"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="post-color">Color:</label>
+                    <input type="color" id="post-color" value="#FFD1DC">
+                </div>
+                <button type="submit" class="action-btn">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation modal -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <h3>Are you sure?</h3>
+            <p id="confirm-message"></p>
+            <div class="modal-actions">
+                <button id="confirm-yes" class="action-btn warning">Yes</button>
+                <button id="confirm-no" class="action-btn">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
